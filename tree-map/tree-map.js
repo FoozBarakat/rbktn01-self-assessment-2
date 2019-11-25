@@ -33,5 +33,42 @@ var Tree = function(value) {
   this.children = [];
 };
 
+Tree.prototype.addChild = function(val) {
+  this.children.push(new Tree(val));
+};
+
+Tree.prototype.contains = function(val) {
+  if (this.value === val) {
+    return true;
+  }
+
+  for (var i = 0; i < this.children.length; i++) {
+    var element = this.children[i];
+
+    if (element.contains(val)) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+Tree.prototype.map = function(fun) {
+  var newArr = [];
+
+  for (var i = 0; i < this.children.length; i++) {
+    
+  }
+
+  return newArr;
+}
+
+
+
+
+
+
+
+
 
 
